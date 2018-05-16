@@ -12,22 +12,9 @@ namespace ConsoleApp31
 
         static void Main(string[] args)
         {
-
-            var dirPath = @"k:";
-            var directories = Directory.EnumerateDirectories(dirPath, "*", SearchOption.TopDirectoryOnly);
-            try
-            {
-                foreach (var item in directories)
-                {
-                    Console.WriteLine(item);
-                    foreach (var folder in Directory.GetDirectories(item))
-                        Console.WriteLine("1" + folder);
-                }
-            }
-            catch (System.UnauthorizedAccessException)
-            {
-
-            };
+           
+            Directories d = new Directories();
+            d.GetFolders(@"k:");           
             
             Console.ReadLine();
         }
